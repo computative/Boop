@@ -62,7 +62,6 @@ if __name__ == "__main__":
     sequences = [["Europe", "North America", "Africa", "Latin America"],
                 ["Europa", "Afrika", "Amerika", "Oceania"]]
     idr = Identifier(sequences, metric)
-    outmaps = idr.outward(sequences[0])
+    outmaps = idr.outward(sequences[0]).tolist()[::-1]
     inmaps = idr.inward(sequences[1])
-    print(outmaps.tolist())
-    print(inmaps)
+    print("Pass =", outmaps == inmaps)
